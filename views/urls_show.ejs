@@ -1,0 +1,20 @@
+<body>
+
+  <header>
+    <% include partials/_header %>
+  </header>
+    <% if (urls[num].createdBy === userCookie) { %>
+      <p>This is the page for the URL: <a href="<%= urls[shortURL].link %>"><%= urls[shortURL].link %></a><p>
+    <% } else if (!userCookie) { %>
+          <p>Please <a href="/register">Register</a> or <a href="/login">Login</a></p>
+    <% } else { %>
+          <p>You don't have access to this info.</p>
+    <% } %>
+
+
+
+
+
+
+
+</body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyURL by Track2Development</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <% if (userCookie) { %>
+  <p>User: <%= usersDB[userCookie].email %></p>
+            <form method="POST" action="/logout">
+            <input type="submit" value="Logout">
+            </form>
+  <% } %>
+
+
+<h4>Menu</h4>
+
+<ul>
+<li><a href="/urls">URL Listings</a></li>
+
+<% if (!userCookie) { %>
+<li><a href="/login">Submit a new URL</a></li>
+<% } else { %>
+<li><a href="/urls/new">Submit a new URL</a></li>
+<% } %>
+
+<% if (!userCookie) { %>
+<li><a href="/register">Register</a></li>
+<li><a href="/login">Login</a></li>
+<% } %>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</body>
+</html>
+

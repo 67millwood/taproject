@@ -1,0 +1,42 @@
+
+<body>
+  <header>
+      <% include partials/_header %>
+  </header>
+  <h1>URL Listings</h1>
+
+<% if (userCookie) { %>
+    <ul>
+      <% for (num in urls) { %>
+        <% if (urls[num].createdBy === userCookie) { %>
+            <li><a target="_blank" href="<%= urls[num].link %>"><%= urls[num].link %> </li></a>
+              <ul>
+                <li>Link to URL page: <a href="/urls/<%= num %>"><%= num %></li></a>
+                <li>Short Link: <a href="<%= urls[num].link %>"><%= num %></li></a>
+                <li>
+                  <form method="POST" action="/urls/<%= num %>/delete">
+                  <input type="submit" value="Delete">
+                  </form>
+                </li>
+                <li>
+                  <form action="/urls/<%= num %>/edit" method="POST">
+                  <label for="longURL">Edit the URL:</label>
+                 <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
+                 <input type="submit" value="Submit">
+                  </form>
+                </li>
+              </ul>
+        <% } else { %>
+              <ul>
+                <li>Short Link: <a href="<%= urls[num].link %>"><%= num %></li></a>
+                <% }  %>
+              </ul>
+      <% } %>
+  </ul>
+<% } else { %>
+        <p>Please <a href="/register">Register</a> or <a href="/login">Login</a></p>
+<% } %>
+
+</body>
+
+
