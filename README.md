@@ -8,7 +8,8 @@ Dependencies are as follows:
 - body-parser
 - bcrypt
 
-
+## functionality
+The tinyapp is fairly straightforward.
 
 The main functionality for a logged in user is that they can edit and delete their own URLs:
 
