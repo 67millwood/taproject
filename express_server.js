@@ -80,7 +80,7 @@ app.get("/urls/new", (req, res) => {
 });
 
 // creating a new URL....posts the user input
-app.post("/", (req, res) => {
+app.post("/urls", (req, res) => {
   let urlKey = generateRandomString();
   urlDatabase[urlKey] = {
     link: req.body.longURL,
@@ -189,7 +189,7 @@ app.post("/register", (req, res) => {
   }
 });
 
-
+// look for the server on PORT (which is set to 8080 on line 3)
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
 });
