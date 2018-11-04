@@ -3,8 +3,12 @@ This is the final repo for my tinyapp project.  There are very few commits as th
 
 Dependencies are as follows:
 - express
-- esj
-- 
+- ejs
+- cookie-session
+- body-parser
+- bcrypt
+
+
 
 The main functionality for a logged in user is that they can edit and delete their own URLs:
 
