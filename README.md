@@ -10,7 +10,12 @@ Dependencies are as follows:
 
 ## functionality
 
+### Using the app
+- install all dependencies
+- run the express_server.js file
+
 The homepage is:  /urls
+
 
 The tinyapp is fairly straightforward.  A new user is given a simple homepage (/urls) with prompts for login and registration. If they attempt to see a URL Listing or Submit a new URL, they are again given prompts to register or login.  I did not create specific error messages for those events.
 
