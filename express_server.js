@@ -92,8 +92,9 @@ app.post("/urls", (req, res) => {
 
 // a redirect page to the ACTUAL URL (external site)
 app.get("/u/:shortURL", (req, res) => {
+
   let longURL = urlDatabase[req.params.shortURL];
-  res.redirect(longURL);
+  res.redirect(longURL.link);
 });
 
 // deleting a URL
