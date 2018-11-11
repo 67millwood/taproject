@@ -53,12 +53,16 @@ app.use(express.static(__dirname + '/public'));
             password: "aaa"
           }
         }
+//homepage
+app.get("/", (req,res) => {
+  res.redirect("urls/")
+});
 
 // delete a cookie & logout
 app.post("/logout", (req, res) => {
   delete req.session.userID;
   res.redirect("/urls")
-})
+});
 
 // Index of all URLs
 app.get("/urls", (req, res) => {
